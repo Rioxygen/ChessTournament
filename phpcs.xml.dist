@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<ruleset>
+    <arg name="basepath" value="."/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="80"/>
+    <arg name="cache" value=".phpcs-cache"/>
+    <arg name="colors"/>
+
+    <!-- Ignore warnings, show progress of the run and show sniff names -->
+    <arg value="nps"/>
+
+    <file>src</file>
+    <exclude-pattern>vendor</exclude-pattern>
+
+    <rule ref="Generic.PHP.Syntax" />
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
+    <rule ref="Generic.Files.LineEndings" />
+    <rule ref="PSR2.Files.EndFileNewline" />
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+
+    <rule ref="PSR2.Methods.MethodDeclaration" />
+
+    <rule ref="Generic.WhiteSpace.ScopeIndent" />
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+    <rule ref="Generic.ControlStructures.InlineControlStructure" />
+    <rule ref="Generic.Debug.ClosureLinter" />
+    <rule ref="Generic.Formatting.DisallowMultipleStatements" />
+    <rule ref="Generic.Formatting.MultipleStatementAlignment" />
+    <rule ref="Generic.Formatting.SpaceAfterCast" />
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing" />
+    <rule ref="Generic.NamingConventions.ConstructorName" />
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName" />
+    <rule ref="Generic.PHP.DeprecatedFunctions" />
+    <rule ref="Generic.PHP.DisallowShortOpenTag" />
+    <rule ref="Generic.PHP.LowerCaseConstant" />
+    <rule ref="Generic.PHP.LowerCaseKeyword" />
+    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing" />
+    <rule ref="Generic.WhiteSpace.LanguageConstructSpacing" />
+
+    <rule ref="Squiz.Classes.ClassDeclaration">
+        <exclude name="Squiz.Classes.ClassDeclaration.MultipleClasses" />
+    </rule>
+
+    <rule ref="Squiz.Classes.DuplicateProperty" />
+    <rule ref="Squiz.Classes.LowercaseClassKeywords" />
+    <rule ref="Squiz.Classes.SelfMemberReference" />
+    <rule ref="Squiz.Classes.ValidClassName">
+        <exclude-pattern>src/PlanetMedia/MedTrainerBundle/Controller/OshaController.php</exclude-pattern>
+        <exclude-pattern>src/Verifications/NPDBBundle/Entity/npdb/jocrReportScheme.php</exclude-pattern>
+        <exclude-pattern>src/PlanetMedia/MedTrainerBundle/Controller/SafetyPlanController.php</exclude-pattern>
+        <exclude-pattern>src/PlanetMedia/MedTrainerBundle/Controller/SetupController.php</exclude-pattern>
+        <exclude-pattern>src/PlanetMedia/MedTrainerBundle/Controller/IncidentReportsController.php</exclude-pattern>
+        <exclude-pattern>src/PlanetMedia/MedTrainerBundle/Controller/CronController.php</exclude-pattern>
+        <exclude-pattern>src/PlanetMedia/MedTrainerBundle/Controller/DocumentFormsController.php</exclude-pattern>
+        <exclude-pattern>src/Verifications/NPDBBundle/Entity/npdb/mmprReportScheme.php</exclude-pattern>
+        <exclude-pattern>src/Verifications/NPDBBundle/Entity/npdb/aarReportScheme.php</exclude-pattern>
+    </rule>
+
+    <rule ref="Squiz.ControlStructures.ControlSignature" />
+    <rule ref="Squiz.ControlStructures.ElseIfDeclaration" />
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration" />
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration" />
+    <rule ref="Squiz.ControlStructures.LowercaseDeclaration" />
+    <rule ref="Squiz.Functions.FunctionDeclaration" />
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1" />
+        </properties>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDuplicateArgument" />
+    <rule ref="Squiz.Functions.GlobalFunction" />
+    <rule ref="Squiz.Functions.LowercaseFunctionKeywords" />
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration" />
+    <rule ref="Squiz.Objects.DisallowObjectStringIndex" />
+    <rule ref="Squiz.PHP.CommentedOutCode" />
+    <rule ref="Squiz.PHP.DiscouragedFunctions" />
+    <rule ref="Squiz.PHP.EmbeddedPhp" />
+    <rule ref="Squiz.PHP.Eval" />
+    <rule ref="Squiz.PHP.GlobalKeyword" />
+    <rule ref="Squiz.PHP.InnerFunctions" />
+    <rule ref="Squiz.PHP.LowercasePHPFunctions" />
+    <rule ref="Squiz.PHP.NonExecutableCode" />
+
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+        </properties>
+    </rule>
+
+    <rule ref="Squiz.Scope.StaticThisUsage" />
+    <rule ref="Squiz.Strings.EchoedStrings" />
+
+    <rule ref="Squiz.WhiteSpace.CastSpacing" />
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing" />
+    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace" />
+    <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing" />
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing" />
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
+    <rule ref="Squiz.WhiteSpace.PropertyLabelSpacing" />
+    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace" />
+    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing" />
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing" />
+
+    <rule ref="Zend.Files.ClosingTag" />
+
+    <!--
+    These sniffs fail for us currently and are required to be manually fixed.
+
+    sizeof is used everywhere. do a mass search and replace
+    <rule ref="Generic.PHP.ForbiddenFunctions" />
+
+    <rule ref="PSR2.Classes.PropertyDeclaration" />
+    <rule ref="Generic.Strings.UnnecessaryStringConcat" />
+    <rule ref="Squiz.Classes.ClassFileName" />
+    <rule ref="Generic.Arrays.ArrayIndent" />
+    <rule ref="Generic.CodeAnalysis.EmptyStatement" />
+    <rule ref="Generic.Commenting.Todo" />
+    -->
+</ruleset>

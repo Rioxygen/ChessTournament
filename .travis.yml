@@ -1,0 +1,23 @@
+language: php
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+php:
+  - 7.2
+  - 7.3
+before_install:
+  - composer self-update
+  - composer install
+
+script:
+  - ./bin/phpunit -v
+
+jobs:
+  include:
+    - stage: Code Quality
+      name: "Coding Standard"
+      php: 7.3
+      script:
+        - ./bin/phpcs

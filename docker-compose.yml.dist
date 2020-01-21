@@ -1,0 +1,34 @@
+version: '2.4'
+services:
+  web:
+    image: rrcfesc/lamp:7.3
+    extra_hosts:
+      - "chess.local.com:127.0.0.1"
+    expose:
+      - "9000"
+      - "3315"
+    ports:
+      - "8101:80"
+    networks:
+      chess_net:
+        ipv4_address: 172.22.10.02
+    volumes:
+      - ./:/var/www/html
+      - ~/.ssh:/home/rioxygen/.ssh
+    environment:
+      PHP_XDEBUG_ENABLED: 1
+      XDEBUG_CONFIG: remote_host=172.22.10.1
+      PHP_IDE_CONFIG: "serverName=Backend"
+    container_name: ${PROJECT_NAME}_web
+
+networks:
+  chess_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.default.forwarding: 1
+      com.docker.network.all.forwarding: 1
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.22.10.0/24
+          gateway: 172.22.10.1

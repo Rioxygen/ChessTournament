@@ -1,0 +1,27 @@
+{
+    "name": "rioxygen/chesstournament",
+    "description": "Package for Chess Tournaments",
+    "type": "symfony-bundle",
+    "license": "BSD-3",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rioxygen\\ChessTournament\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rioxygen\\ChessTournament\\": "tests/"
+        }
+    }
+}

@@ -1,2 +1,2 @@
 # chessTournament
-Package to allow implement tournaments, calculate raiting and desempate systems
+Package that allows to implement chess tournaments, ranking calculation and tiebreaker systems
